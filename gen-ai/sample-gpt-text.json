@@ -1,0 +1,128 @@
+{
+  "variable": [
+    {
+      "value": "https://api.openai.com/v1/chat/completions",
+      "key": "api.url"
+    },
+    {
+      "value": "<your-prompt-here>",
+      "current": "",
+      "key": "textInput"
+    },
+    {
+      "value": "0",
+      "current": "",
+      "key": "temp"
+    }
+  ],
+  "protocolProfileBehavior": {},
+  "item": [
+    {
+      "name": "Generate a response from the model with the provided text input",
+      "request": {
+        "header": [
+          {
+            "description": "",
+            "value": "application/json",
+            "key": "Content-Type"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "file": "",
+          "urlencoded": [],
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n    \"model\": \"gpt-3.5-turbo\",\n    \"temperature\": {{temp}},\n    \"messages\": [\n      {\n        \"role\": \"user\",\n        \"content\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{{textInput}}\"\n          }\n        ]\n      }\n    ],\n    \"max_tokens\": 1024\n  }",
+          "formdata": [
+            {
+              "description": "",
+              "type": "file",
+              "value": "user",
+              "key": "role"
+            }
+          ],
+          "graphql": ""
+        },
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "<your-token-here>",
+              "type": "string"
+            }
+          ]
+        },
+        "url": {
+          "host": [
+            "{{api.url}}"
+          ],
+          "raw": "{{api.url}}"
+        }
+      },
+      "id": "1c421e89-8789-4231-8b46-007f2dbfdc46",
+      "event": [
+        {
+          "mablVariables": [
+            {
+              "description": "response",
+              "assertTarget": "JSONBody",
+              "id": "a13fb5fc-eb80-4eec-a888-46f264d02cc1",
+              "variableName": "response",
+              "bodyPath": "choices[0].message.content"
+            }
+          ],
+          "mablAssertions": [
+            {
+              "assertType": "Equals",
+              "assertTarget": "Status",
+              "id": "eaaddd0e-17ee-47b0-ab09-5d5908f5d421",
+              "value": "200"
+            }
+          ],
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// __MABL_GENERATED__ Do not edit below this line",
+              "pm.environment.set(\"response\", JSON.stringify(_.get(pm.response.json(), pm.variables.replaceIn('choices[0].message.content')))?.replace(/^\"(.+(?=\"$))\"$/, '$1'));",
+              "pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": []
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": []
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": []
+      }
+    }
+  ],
+  "info": {
+    "name": "Sample - OpenAI GPT | text",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  }
+}
