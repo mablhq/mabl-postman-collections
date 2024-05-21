@@ -1,0 +1,107 @@
+{
+  "variable": [
+    {
+      "value": "https://api.anthropic.com/v1/messages",
+      "key": "api.url"
+    },
+    {
+      "value": "claude-3-opus-20240229",
+      "key": "llm"
+    },
+    {
+      "value": "<your-prompt-here>",
+      "current": "",
+      "key": "textInput"
+    },
+    {
+      "value": "<image-in-base64>",
+      "current": "",
+      "key": "imgBase64"
+    },
+    {
+      "value": "0",
+      "current": "",
+      "key": "temp"
+    },
+    {
+      "value": "<anthropic-api-key>",
+      "current": "",
+      "key": "apiKey"
+    }
+  ],
+  "protocolProfileBehavior": {},
+  "item": [
+    {
+      "name": "Generate a response from the model with the provided text and image input.",
+      "request": {
+        "header": [
+          {
+            "description": "",
+            "disabled": false,
+            "value": "{{apiKey}}",
+            "key": "x-api-key"
+          },
+          {
+            "description": "",
+            "value": "2023-06-01",
+            "key": "anthropic-version"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "file": "",
+          "urlencoded": [],
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n    \"model\": \"{{llm}}\",\n    \"max_tokens\": 1024,\n    \"temperature\": {{temp}},\n    \"messages\": [\n        {\"role\": \"user\", \"content\": [\n            {\"type\": \"image\", \"source\": {\n                \"type\": \"base64\",\n                \"media_type\": \"image/png\",\n                \"data\": \"{{imgBase64}}\"\n              \n            }},\n            {\"type\": \"text\", \"text\": \"{{textInput}}\"}\n        ]}\n    ]\n}",
+          "formdata": [],
+          "graphql": ""
+        },
+        "method": "POST",
+        "auth": {
+          "type": "noauth"
+        },
+        "url": {
+          "host": [
+            "{{api.url}}"
+          ],
+          "raw": "{{api.url}}"
+        }
+      },
+      "event": [
+        {
+          "mablVariables": [],
+          "mablAssertions": [],
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": []
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": []
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": []
+      }
+    }
+  ],
+  "info": {
+    "name": "Sample - Anthropic Claude | multimodal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  }
+}
