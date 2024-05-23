@@ -1,5 +1,8 @@
 # mabl Postman Collections
 This repository contains Postman collections that you can view, edit, and [import into mabl as API tests](https://help.mabl.com/hc/en-us/articles/19078193969940).
+
+> Contributions welcome!
+> You contributions helps us build a more comprehensive resource for the mabl community.
   
 ## Generative AI
 Send text or multimodal input to one of the following models and generate a response:
