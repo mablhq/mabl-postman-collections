@@ -4,7 +4,7 @@ This repository contains Postman collections that you can view, edit, and [impor
 > **Contributions welcome!**
 > Your contributions help us build a more comprehensive resource for the mabl community.
   
-## Generative AI
+## gen-ai
 Send text or multimodal input to one of the following models and generate a response:
 - [Anthropic Claude](https://docs.anthropic.com/en/api/getting-started)
 - [Google Gemini](https://ai.google.dev/gemini-api/docs)
