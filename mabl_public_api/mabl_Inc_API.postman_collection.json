@@ -1,0 +1,3266 @@
+{
+	"info": {
+		"_postman_id": "316d5c40-74c1-4444-b3ea-96bb88193b89",
+		"name": "mabl APIs",
+		"description": "For full documentation on the mabl, Inc. API please refer to:  \n[https://api.help.mabl.com/reference](https://api.help.mabl.com/reference)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42537138"
+	},
+	"item": [
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "Create application - https://api.help.mabl.com/reference/createapplication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"ssl_options\": {\n    \"min_version\": \"TLSv1\",\n    \"max_version\": \"TLSv1_3\"\n  }, */\n//  \"workspace_id\": \"string\",\n//  \"name\": \"string\",\n//  \"last_updated_by_id\": \"string\",\n//  \"description\": \"string\",\n//  \"created_by_id\": \"string\",\n//  \"send_mabl_header\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/applications",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get applications by workspace - https://api.help.mabl.com/reference/queryapplications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/applications?workspace_id&limit&cursor",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"applications"
+							],
+							"query": [
+								{
+									"key": "workspace_id",
+									"value": null,
+									"description": "String, Required"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get application by ID - https://api.help.mabl.com/reference/getapplication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/applications/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"applications",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update application - https://api.help.mabl.com/reference/updateapplication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"ssl_options\": {\n    \"min_version\": \"TLSv1\",\n    \"max_version\": \"TLSv1_3\"\n  }, */\n//  \"workspace_id\": \"string\",\n//  \"name\": \"string\",\n//  \"last_updated_by_id\": \"string\",\n//  \"description\": \"string\",\n//  \"created_by_id\": \"string\",\n//  \"send_mabl_header\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/applications/:id?field_mask",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"applications",
+								":id"
+							],
+							"query": [
+								{
+									"key": "field_mask",
+									"value": null,
+									"description": "Comma seperated strings"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove application - https://api.help.mabl.com/reference/removeapplication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/applications/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"applications",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Credentials",
+			"item": [
+				{
+					"name": "Create Credentials - https://api.help.mabl.com/reference/createcredentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"properties\": {\n    \"key\": \"value - string\"\n  }, */\n//  \"created_time\": \"int64\",\n//  \"cloud_only\": true,\n/*  \"totp_pins\": [\n    {\n      \"start_time\": \"int64\",\n      \"pin\": \"string\"\n    }\n  ], */\n//  \"description\": \"string\",\n//  \"type\": \"basic_with_totp\",\n/*  \"tags\": [\n    {\n      \"name\": \"string\"\n    }\n  ], */\n//  \"last_updated_time\": \"int64\",\n//  \"organization_id\": \"string\",\n//  \"name\": \"string\",\n//  \"last_updated_by_id\": \"string\",\n//  \"id\": \"string\",\n//  \"created_by_id\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/credentials",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"credentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Credentials - https://api.help.mabl.com/reference/querycredentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/credentials?organization_id&limit&cursor",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"credentials"
+							],
+							"query": [
+								{
+									"key": "organization_id",
+									"value": null,
+									"description": "String, Required"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Credentials - https://api.help.mabl.com/reference/getcredentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/credentials/:id?with_secrets&with_computed_totp_count",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"credentials",
+								":id"
+							],
+							"query": [
+								{
+									"key": "with_secrets",
+									"value": null,
+									"description": "Boolean, Defaults true"
+								},
+								{
+									"key": "with_computed_totp_count",
+									"value": null,
+									"description": "int32, Defaults 0"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Credentials - https://api.help.mabl.com/reference/updatecredentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"properties\": {\n    \"key\": \"value - string\"\n  }, */\n//  \"created_time\": \"int64\",\n//  \"cloud_only\": true,\n/*  \"totp_pins\": [\n    {\n      \"start_time\": \"int64\",\n      \"pin\": \"string\"\n    }\n  ], */\n//  \"description\": \"string\",\n//  \"type\": \"basic_with_totp\",\n/*  \"tags\": [\n    {\n      \"name\": \"string\"\n    }\n  ], */\n//  \"last_updated_time\": \"int64\",\n//  \"organization_id\": \"string\",\n//  \"name\": \"string\",\n//  \"last_updated_by_id\": \"string\",\n//  \"id\": \"string\",\n//  \"created_by_id\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/credentials/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"credentials",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Credentials - https://api.help.mabl.com/reference/removecredentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/credentials/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"credentials",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DataTable",
+			"item": [
+				{
+					"name": "Create Datatable - https://api.help.mabl.com/reference/createdatatable",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "201"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data_table\": {\n//    \"name\": \"string\"\n  },\n//  \"workspace_id\": \"string\",\n \"scenarios\": [\n    {\n/*      \"variables\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ], */\n//      \"name\": \"string\"\n    },\n/*    {\n      \"variables\": [\n        {\n          \"name\": \"string2\",\n          \"value\": \"string2\"\n        }\n      ], */\n//      \"name\": \"string2\"\n    }\n  ] \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/dataTables",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Datatables - https://api.help.mabl.com/reference/querydatatables",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/dataTables?workspace_id=&limit&cursor",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables"
+							],
+							"query": [
+								{
+									"key": "workspace_id",
+									"value": "",
+									"description": "String"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Datatable - https://api.help.mabl.com/reference/getdatatable",
+					"event": [
+						{
+							"mablVariables": [
+								{
+									"description": "Used for all scenario_id refs",
+									"assertTarget": "JSONBody",
+									"id": "129e1926-1b22-4583-bb5d-2dd37cab095d",
+									"variableName": "scenario_id",
+									"bodyPath": "scenario_ids[0]"
+								}
+							],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/dataTables/:data_table_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								":data_table_id"
+							],
+							"variable": [
+								{
+									"key": "data_table_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Datatable - https://api.help.mabl.com/reference/putdatatable",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/dataTables/:data_table_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								":data_table_id"
+							],
+							"variable": [
+								{
+									"key": "data_table_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Variable Name - https://api.help.mabl.com/reference/createvariablename",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "84cd901d-2d66-41b7-b62f-95285189e98a",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"default_value\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/dataTables/:data_table_id/variableNames",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								":data_table_id",
+								"variableNames"
+							],
+							"variable": [
+								{
+									"key": "data_table_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Variable Names - https://api.help.mabl.com/reference/getvariablenames",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "84cd901d-2d66-41b7-b62f-95285189e98a",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/dataTables/:data_table_id/variableNames",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								":data_table_id",
+								"variableNames"
+							],
+							"variable": [
+								{
+									"key": "data_table_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Variable Name - https://api.help.mabl.com/reference/updatevariablename",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "84cd901d-2d66-41b7-b62f-95285189e98a",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"new_name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/dataTables/:data_table_id/variableNames",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								":data_table_id",
+								"variableNames"
+							],
+							"variable": [
+								{
+									"key": "data_table_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Variable Name - https://api.help.mabl.com/reference/removevariablename",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "84cd901d-2d66-41b7-b62f-95285189e98a",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/dataTables/:data_table_id/variableNames/removeVariableName",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								":data_table_id",
+								"variableNames",
+								"removeVariableName"
+							],
+							"variable": [
+								{
+									"key": "data_table_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Scenarios - https://api.help.mabl.com/reference/queryscenarios",
+					"event": [
+						{
+							"mablVariables": [
+								{
+									"description": "Used in update scenario and delete scenario ",
+									"assertTarget": "JSONBody",
+									"id": "fd317d5a-e4c7-4b70-a13e-764b92b5747a",
+									"variableName": "removeScenario",
+									"bodyPath": "scenarios[1].id"
+								}
+							],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "eaa89009-fc63-4af1-a6b8-cf56595a7bfd",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/dataTables/scenarios?data_table_id=&limit&cursor",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								"scenarios"
+							],
+							"query": [
+								{
+									"key": "data_table_id",
+									"value": "",
+									"description": "String"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Scenario - https://api.help.mabl.com/reference/createscenario",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "eaa89009-fc63-4af1-a6b8-cf56595a7bfd",
+									"value": "201"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"variables\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ], */\n//  \"name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/dataTables/:data_table_id/scenarios",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								":data_table_id",
+								"scenarios"
+							],
+							"variable": [
+								{
+									"key": "data_table_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Scenario - https://api.help.mabl.com/reference/getscenario",
+					"event": [
+						{
+							"mablVariables": [
+								{
+									"description": "Used in create scenario",
+									"assertTarget": "JSONBody",
+									"id": "a28d7a34-b7b8-4c63-84d7-c176babc2cf2",
+									"variableName": "create_scenario",
+									"bodyPath": "variables"
+								}
+							],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "eaa89009-fc63-4af1-a6b8-cf56595a7bfd",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mabl.com/dataTables/scenarios/:scenario_id",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mabl",
+								"com"
+							],
+							"path": [
+								"dataTables",
+								"scenarios",
+								":scenario_id"
+							],
+							"variable": [
+								{
+									"key": "scenario_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Scenario - https://api.help.mabl.com/reference/putscenario",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "eaa89009-fc63-4af1-a6b8-cf56595a7bfd",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"variables\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ], */\n//  \"name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.mabl.com/dataTables/scenarios/:scenario_id",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mabl",
+								"com"
+							],
+							"path": [
+								"dataTables",
+								"scenarios",
+								":scenario_id"
+							],
+							"variable": [
+								{
+									"key": "scenario_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Scenario - https://api.help.mabl.com/reference/removescenario",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "eaa89009-fc63-4af1-a6b8-cf56595a7bfd",
+									"value": "204"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 204\", function () { pm.response.to.have.status(parseInt(\"204\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/dataTables/scenarios/:scenario_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"dataTables",
+								"scenarios",
+								":scenario_id"
+							],
+							"variable": [
+								{
+									"key": "scenario_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DatabaseConnection",
+			"item": [
+				{
+					"name": "Create database connection - https://api.help.mabl.com/reference/createdatabaseconnection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"connection_properties\": {\n /*   \"driver_properties\": {\n      \"key\": \"value - string\"\n    }, */\n//    \"credentials_id\": \"string\",\n//    \"database\": \"string\",\n//    \"port\": \"int\",\n//    \"host\": \"string\",\n/*    \"link_agent_labels\": [\n      \"string\"\n    ] */\n  }, \n//  \"created_time\": \"int64\",\n//  \"deleted_by_id\": \"string\",\n//  \"description\": \"string\",\n//  \"workspace_id\": \"string\",\n//  \"database_type\": \"mysql\",\n//  \"last_updated_time\": \"int64\",\n//  \"name\": \"string\",\n/*  \"connection_overrides\": [\n   {\n      \"connection_properties\": {\n    /*    \"driver_properties\": {\n          \"key\": \"value - string\"\n        }, \n    //    \"credentials_id\": \"string\",\n    //    \"database\": \"string\",\n    //    \"port\": \"int\",\n    //    \"host\": \"string\",\n    /*    \"link_agent_labels\": [\n          \"string\"\n        ] \n      },\n    //  \"environment_id\": \"string\"\n    }\n  ], */\n//  \"last_updated_by_id\": \"string\",\n//  \"id\": \"string\",\n//  \"created_by_id\": \"string\",\n//  \"deleted_time\": \"int64\"\n  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "/database/connection",
+							"path": [
+								"database",
+								"connection"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get database connections by workspace - https://api.help.mabl.com/reference/querydatabaseconnections",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/database/connections?workspace_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"database",
+								"connections"
+							],
+							"query": [
+								{
+									"key": "workspace_id",
+									"value": null,
+									"description": "String, Required"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get database connection - https://api.help.mabl.com/reference/getdatabaseconnection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/database/connections/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"database",
+								"connections",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update database connection - https://api.help.mabl.com/reference/updatedatabaseconnection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"connection_properties\": {\n /*   \"driver_properties\": {\n      \"key\": \"value - string\"\n    }, */\n//    \"credentials_id\": \"string\",\n//    \"database\": \"string\",\n//    \"port\": \"int\",\n//    \"host\": \"string\",\n/*    \"link_agent_labels\": [\n      \"string\"\n    ] */\n  }, \n//  \"created_time\": \"int64\",\n//  \"deleted_by_id\": \"string\",\n//  \"description\": \"string\",\n//  \"workspace_id\": \"string\",\n//  \"database_type\": \"mysql\",\n//  \"last_updated_time\": \"int64\",\n//  \"name\": \"string\",\n/*  \"connection_overrides\": [\n   {\n      \"connection_properties\": {\n    /*    \"driver_properties\": {\n          \"key\": \"value - string\"\n        }, \n    //    \"credentials_id\": \"string\",\n    //    \"database\": \"string\",\n    //    \"port\": \"int\",\n    //    \"host\": \"string\",\n    /*    \"link_agent_labels\": [\n          \"string\"\n        ] \n      },\n    //  \"environment_id\": \"string\"\n    }\n  ], */\n//  \"last_updated_by_id\": \"string\",\n//  \"id\": \"string\",\n//  \"created_by_id\": \"string\",\n//  \"deleted_time\": \"int64\"\n  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/database/connections/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"database",
+								"connections",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove database connection - https://api.help.mabl.com/reference/deletedatabaseconnection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 204\", function () { pm.response.to.have.status(parseInt(\"204\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/database/connections/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"database",
+								"connections",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Environment",
+			"item": [
+				{
+					"name": "Create environment - https://api.help.mabl.com/reference/createenvironment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"variables\": {\n    \"key\": \"value - string\"\n  }, */\n//  \"page_load_wait\": \"NORMAL\",\n//  \"created_time\": \"int64\",\n//  \"use_link_agent\": true,\n//  \"link_bypass_mabl_proxy\": true,\n//  \"description\": \"string\",\n/*  \"link_agent_labels\": [\n    \"string\"\n  ], */\n//  \"workspace_id\": \"string\",\n//  \"last_updated_time\": \"int64\",\n//  \"name\": \"string\",\n//  \"last_updated_by_id\": \"string\",\n//  \"id\": \"string\",\n//  \"created_by_id\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/environments",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"environments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get environments by workspace - https://api.help.mabl.com/reference/queryenvironments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/environments?workspace_id=&limit=",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"environments"
+							],
+							"query": [
+								{
+									"key": "workspace_id",
+									"value": "",
+									"description": "String"
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "int32"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Environment by ID - https://api.help.mabl.com/reference/getenvironment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/environments/:id?decrypt",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"environments",
+								":id"
+							],
+							"query": [
+								{
+									"key": "decrypt",
+									"value": null,
+									"description": "Boolean"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update environment - https://api.help.mabl.com/reference/updateenvironment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"variables\": {\n    \"key\": \"value - string\"\n  }, */\n//  \"page_load_wait\": \"NORMAL\",\n//  \"created_time\": \"int64\",\n//  \"use_link_agent\": true,\n//  \"link_bypass_mabl_proxy\": true,\n//  \"description\": \"string\",\n/*  \"link_agent_labels\": [\n    \"string\"\n  ], */\n//  \"workspace_id\": \"string\",\n//  \"last_updated_time\": \"int64\",\n//  \"name\": \"string\",\n//  \"last_updated_by_id\": \"string\",\n//  \"id\": \"string\",\n//  \"created_by_id\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/environments/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"environments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove environment - https://api.help.mabl.com/reference/removeenvironment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status equals 204\", function () { pm.response.to.have.status(parseInt(\"204\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/environments/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"environments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Trigger Tests on Deployment - https://api.help.mabl.com/reference/ondeploy",
+					"event": [
+						{
+							"mablVariables": [
+								{
+									"description": "Used in get a deployment result summary",
+									"assertTarget": "JSONBody",
+									"id": "4784839c-33c0-4bae-94e2-4a3d1a4e264c",
+									"variableName": "event_id",
+									"bodyPath": "id"
+								}
+							],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "201"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n /* \"plan_labels\": [\n    \"string\"\n  ], */\n/*  \"actions\": {\n    \"snapshot\": {\n      \"from\": \"string\"\n    },\n    \"rebaseline_images\": true,\n    \"set_static_baseline\": true\n  }, */\n//  \"environment_id\": \"string\",\n/*  \"triggered_plan_run_summaries\": [\n    {\n      \"plan_run_id\": \"string\",\n      \"plan_id\": \"string\"\n    }\n  ], */\n//  \"application_id\": \"string\",\n//  \"branch\": \"string\",\n//  \"source_control_tag\": \"string\",\n//  \"revision\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/events/deployment?preview",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"events",
+								"deployment"
+							],
+							"query": [
+								{
+									"key": "preview",
+									"value": null,
+									"description": "Boolean"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Deployment Events - https://api.help.mabl.com/reference/querydeploymentevents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/events/deployment?workspace_id&environment_id&start_time&end_time&limit&cursor",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"events",
+								"deployment"
+							],
+							"query": [
+								{
+									"key": "workspace_id",
+									"value": null,
+									"description": "String"
+								},
+								{
+									"key": "environment_id",
+									"value": null,
+									"description": "String"
+								},
+								{
+									"key": "start_time",
+									"value": null,
+									"description": "int64 - epoch milliseconds"
+								},
+								{
+									"key": "end_time",
+									"value": null,
+									"description": "int64 - epoch milliseconds"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32 - 1 to 100, Default 10"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Deployment Result Summary - https://api.help.mabl.com/reference/getexecutionresultforevent",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/execution/result/event/:event_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"execution",
+								"result",
+								"event",
+								":event_id"
+							],
+							"variable": [
+								{
+									"key": "event_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flow",
+			"item": [
+				{
+					"name": "Get flow metadata - https://api.help.mabl.com/reference/getflowmetadata",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/flows/:id/metadata",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"flows",
+								":id",
+								"metadata"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update flow metadata only - https://api.help.mabl.com/reference/updateflowmetadata",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n//  \"workspace_id\": \"string\",\n//  \"created_time\": \"int64\",\n//  \"last_updated_time\": \"int64\",\n//  \"last_updated_by_id\": \"string\",\n//  \"id\": \"string\",\n//  \"created_by_id\": \"string\",\n//  \"import_source_version\": \"string\",\n//  \"flow_type\": \"mablscript\",\n//  \"mobile_platform\": \"android\",\n//  \"description\": \"string\",\n/*  \"labels\": [\n    {\n      \"name\": \"string\"\n    }\n  ], */\n//  \"import_source_id\": \"postman\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/flows/:id/metadata",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"flows",
+								":id",
+								"metadata"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Issue",
+			"item": [
+				{
+					"name": "Create issue - https://api.help.mabl.com/reference/createissue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n /* \"issue_fields\": {\n    \"key\": \"value - string\"\n  }, */\n  // \"integration_id\": \"string\",\n  // \"workspace_id\": \"string\",\n  // \"schema_id\": \"string\",\n  // \"issue_tracker_link\": \"string\",\n  // \"issue_tracker_variant_id\": \"string\",\n  // \"issue_tracker_invariant_id\": \"string\",\n  // \"open\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/issues?issue_tracker_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"issues"
+							],
+							"query": [
+								{
+									"key": "issue_tracker_id",
+									"value": null,
+									"description": "String"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get issue - https://api.help.mabl.com/reference/getissue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/issues/:issue_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"issues",
+								":issue_id"
+							],
+							"variable": [
+								{
+									"key": "issue_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updates the given issue, and sets the committed flag to false. - https://api.help.mabl.com/reference/updateissue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n/*  \"issue_fields\": {\n    \"key\": \"value - string\"\n  }, */\n//  \"integration_id\": \"string\",\n//  \"workspace_id\": \"string\",\n//  \"schema_id\": \"string\",\n//  \"issue_tracker_link\": \"strgin\",\n//  \"issue_tracker_variant_id\": \"string\",\n//  \"issue_tracker_invariant_id\": \"string\",\n//  \"open\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/issues/:issue_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"issues",
+								":issue_id"
+							],
+							"variable": [
+								{
+									"key": "issue_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove issue - https://api.help.mabl.com/reference/removeissue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status equals 204\", function () { pm.response.to.have.status(parseInt(\"204\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/issues/:issue_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"issues",
+								":issue_id"
+							],
+							"variable": [
+								{
+									"key": "issue_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query issues by workspace - https://api.help.mabl.com/reference/queryissuesbyworkspaceid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/workspaces/:workspace_id/issues?open&linkedTo&limit&cursor",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"workspaces",
+								":workspace_id",
+								"issues"
+							],
+							"query": [
+								{
+									"key": "open",
+									"value": null,
+									"description": "Boolean"
+								},
+								{
+									"key": "linkedTo",
+									"value": null,
+									"description": "String"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "string"
+								}
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LinkAgent",
+			"item": [
+				{
+					"name": "Download Link Agent - https://api.help.mabl.com/reference/redirecttolatestdistribution",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/link/agents/distribution-redirect?branch&format&auto_update",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"link",
+								"agents",
+								"distribution-redirect"
+							],
+							"query": [
+								{
+									"key": "branch",
+									"value": null,
+									"description": "String"
+								},
+								{
+									"key": "format",
+									"value": null,
+									"description": "String"
+								},
+								{
+									"key": "auto_update",
+									"value": null,
+									"description": "Boolean, Default true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Link Agents - https://api.help.mabl.com/reference/querylinkagents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/link/agents?workspace_id&label&max_heartbeat_age_sec&limit&cursor",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"link",
+								"agents"
+							],
+							"query": [
+								{
+									"key": "workspace_id",
+									"value": null,
+									"description": "String, Required"
+								},
+								{
+									"key": "label",
+									"value": null,
+									"description": "String"
+								},
+								{
+									"key": "max_heartbeat_age_sec",
+									"value": null,
+									"description": "int32"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send a shutdown signal to a specific Link Agent - https://api.help.mabl.com/reference/terminatelinkagent",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 204\", function () { pm.response.to.have.status(parseInt(\"204\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/link/agents/:id/terminate",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"link",
+								"agents",
+								":id",
+								"terminate"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LinkLabel",
+			"item": [
+				{
+					"name": "Query Link Labels - https://api.help.mabl.com/reference/querylinklabels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/link/labels?workspace_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"link",
+								"labels"
+							],
+							"query": [
+								{
+									"key": "workspace_id",
+									"value": null,
+									"description": "String, Required"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Link Label - https://api.help.mabl.com/reference/deletelinkstack",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 204\", function () { pm.response.to.have.status(parseInt(\"204\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/link/:workspace_id/label/:label",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"link",
+								":workspace_id",
+								"label",
+								":label"
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": ""
+								},
+								{
+									"key": "label",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mailbox",
+			"item": [
+				{
+					"name": "Create Mailbox - https://api.help.mabl.com/reference/createpermanentmailbox",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workspace_id\": \"string\",\n  // \"name\": \"string\",\n  // \"description\": \"string\",\n  // \"address_prefix\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/mailbox",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"mailbox"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get information on Mailboxes by workspace ID - https://api.help.mabl.com/reference/querymailboxesinworkspace",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/mailbox/address/workspace/:workspace_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"mailbox",
+								"address",
+								"workspace",
+								":workspace_id"
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mailbox - https://api.help.mabl.com/reference/getmailboxaddress",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/mailbox/address/:email_or_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"mailbox",
+								"address",
+								":email_or_id"
+							],
+							"variable": [
+								{
+									"key": "email_or_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Mailbox - https://api.help.mabl.com/reference/updatemailboxaddress",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  // \"workspace_id\": \"string\",\n  // \"created_time\": \"int64\",\n  // \"email_address\": \"string\",\n  // \"last_updated_time\": \"int64\",\n  // \"disabled_time\": \"int64\",\n  // \"name\": \"string\",\n  // \"last_updated_by_id\": \"string\",\n  // \"description\": \"string\",\n  // \"id\": \"string\",\n  // \"created_by_id\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/mailbox/address/:id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"mailbox",
+								"address",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Mailbox - https://api.help.mabl.com/reference/deletemailboxaddress",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 204\", function () { pm.response.to.have.status(parseInt(\"204\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "mailbox/address/:id",
+							"host": [
+								"mailbox"
+							],
+							"path": [
+								"address",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Mailbox Status - https://api.help.mabl.com/reference/updatemailboxstatus",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/mailbox/address/:id/status",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"mailbox",
+								"address",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reporting",
+			"item": [
+				{
+					"name": "Get a Test Run Summary - https://api.help.mabl.com/reference/gettestrunresult",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/results/testRun/:test_run_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"results",
+								"testRun",
+								":test_run_id"
+							],
+							"query": [
+								{
+									"key": "advanced_metrics",
+									"value": null,
+									"description": "Boolean",
+									"disabled": true
+								},
+								{
+									"key": "advanced_metrics_by_flow\n",
+									"value": null,
+									"description": "Boolean",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "test_run_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Plan Run Summary - https://api.help.mabl.com/reference/getplanrunresult",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/results/planRun/:plan_run_id?advanced_metrics=True",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"results",
+								"planRun",
+								":plan_run_id"
+							],
+							"query": [
+								{
+									"key": "advanced_metrics",
+									"value": "True",
+									"description": "Boolean"
+								}
+							],
+							"variable": [
+								{
+									"key": "plan_run_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get test run summaries over a time range - https://api.help.mabl.com/reference/getbatchtestrunresults",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/workspace/:workspace_id/testRuns",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"workspace",
+								":workspace_id",
+								"testRuns"
+							],
+							"query": [
+								{
+									"key": "application_id",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "environment_id",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "test_id",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "test_label",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "plan_id",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "plan_label",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "outcomes",
+									"value": null,
+									"description": "Array of some combination: Passed, Failed, Stopped",
+									"disabled": true
+								},
+								{
+									"key": "earliest_run_start_time",
+									"value": null,
+									"description": "int64 - epoch milliseconds",
+									"disabled": true
+								},
+								{
+									"key": "latest_run_start_time",
+									"value": null,
+									"description": "int64 - epoch milliseconds",
+									"disabled": true
+								},
+								{
+									"key": "advanced_metrics",
+									"value": null,
+									"description": "Boolean",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "500",
+									"description": "int32 -1 to 2000 (Defaults to 500)",
+									"disabled": true
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an export of test run artifacts - https://api.help.mabl.com/reference/createtestrunartifactexport",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 201\", function () { pm.response.to.have.status(parseInt(\"201\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artifact_types\": [\n   // \"console_logs\",\n   // \"doms\",\n   // \"hars\",\n   // \"screenshots\",\n   // \"traces\",\n    \"xray_json\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/report/runArtifacts/testRun/:test_run_id",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"report",
+								"runArtifacts",
+								"testRun",
+								":test_run_id"
+							],
+							"variable": [
+								{
+									"key": "test_run_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve activity feed entries - https://api.help.mabl.com/reference/queryactivityfeed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/workspaces/:workspace_id/reports/activityFeed",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"workspaces",
+								":workspace_id",
+								"reports",
+								"activityFeed"
+							],
+							"query": [
+								{
+									"key": "action_type",
+									"value": null,
+									"description": "String - One of: create, update, delete, or recover",
+									"disabled": true
+								},
+								{
+									"key": "entity_type",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "entity_name",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "actor_id",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "actor_is_mabl_employee",
+									"value": null,
+									"description": "Boolean",
+									"disabled": true
+								},
+								{
+									"key": "start_time",
+									"value": null,
+									"description": "int64 - epoch milliseconds",
+									"disabled": true
+								},
+								{
+									"key": "end_time",
+									"value": null,
+									"description": "int64 - epoch milliseconds",
+									"disabled": true
+								},
+								{
+									"key": "is_automator_event",
+									"value": null,
+									"description": "Boolean",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32 - 1 to 200 (Defaults to 100)",
+									"disabled": true
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a test run artifact export - https://api.help.mabl.com/reference/gettestrunartifactexport",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/workspaces/:workspace_id/reports/activityFeed",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"workspaces",
+								":workspace_id",
+								"reports",
+								"activityFeed"
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "Get test metadata - https://api.help.mabl.com/reference/gettestmetadata",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/test/:test_id/metadata",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"test",
+								":test_id",
+								"metadata"
+							],
+							"variable": [
+								{
+									"key": "test_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update test metadata -",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  // \"workspace_id\": \"string\",\n  // \"created_time\": \"int64\",\n  // \"last_updated_time\": \"int64\",\n  // \"last_updated_by_id\": \"string\",\n  // \"id\": \"string\",\n  // \"created_by_id\": \"string\",\n  /* \"device_emulations\": [\n    {\n      \"device_config\": {\n        \"screen\": {\n          \"horizontal\": {\n            \"width\": \"int32\",\n            \"height\": \"int32\"\n          },\n          \"vertical\": {\n            \"width\": \"int32\",\n            \"height\": \"int32\"\n          },\n          \"device_pixel_ratio\": \"double\"\n        },\n        \"capabilities\": [\n          \"touch\",\n          \"mobile\"\n        ],\n        \"name\": \"string\",\n        \"preset_type\": \"iphone_15_pro_max\",\n        \"type\": \"phone\",\n        \"user_agent\": \"string\"\n      },\n      \"orientation\": \"portrait_primary\"\n    }\n  ], */\n/*  \"datatables\": [\n    \"array \",\n    \"of\",\n    \"strings\"\n  ], */\n//  \"name\": \"string\",\n/*  \"test_cases\": [\n    {\n      \"id\": \"string\"\n    }\n  ], */\n//  \"description\": \"string\",\n//  \"test_source\": \"mabl_cloud\",\n//  \"export_variables\": true,\n//  \"enabled\": true,\n//  \"test_type\": \"mobile\",\n//  \"send_mabl_header\": true,\n/*  \"labels\": [\n    {\n      \"name\": \"string\"\n    }\n  ] */\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api.url}}/test/:test_id/metadata",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"test",
+								":test_id",
+								"metadata"
+							],
+							"variable": [
+								{
+									"key": "test_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Query Users - https://api.help.mabl.com/reference/queryusers",
+					"event": [
+						{
+							"mablVariables": [
+								{
+									"description": "user_id is used in retrieve workspace user and update test metadata",
+									"assertTarget": "JSONBody",
+									"id": "030000b7-be9e-454c-a466-93abdab89c92",
+									"variableName": "user_id",
+									"bodyPath": "users[0].id"
+								}
+							],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "700c14d0-ebff-4270-a633-953540cf153e",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/users?email&limit&workspace_id=&cursor&include_historic=",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": null,
+									"description": "String"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "int32 - 1 to 200"
+								},
+								{
+									"key": "workspace_id",
+									"value": "",
+									"description": "String"
+								},
+								{
+									"key": "cursor",
+									"value": null,
+									"description": "String"
+								},
+								{
+									"key": "include_historic",
+									"value": "",
+									"description": "Boolean - Defaults to false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Workspace User - https://api.help.mabl.com/reference/getworkspaceuser",
+					"event": [
+						{
+							"mablVariables": [],
+							"mablAssertions": [
+								{
+									"assertType": "Equals",
+									"assertTarget": "Status",
+									"id": "827f2058-30db-43e9-98da-8cc0d98a0788",
+									"value": "200"
+								}
+							],
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mabl.com/workspaces/:workspace_id/users/:id",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mabl",
+								"com"
+							],
+							"path": [
+								"workspaces",
+								":workspace_id",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": "",
+									"description": "String"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"description": "String"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "your_api_key_here",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api.url",
+			"value": "https://api.mabl.com/"
+		}
+	]
+}
