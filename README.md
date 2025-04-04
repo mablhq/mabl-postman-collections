@@ -15,10 +15,18 @@ When [shared variables](https://help.mabl.com/hc/articles/17750199158804) is ena
 - Generate input for a subsequent test run
 
 ## mabl_public_api
-A postman collection of our public api found on our [reference page](https://api.help.mabl.com/reference) with end points, path variables, query parameters and post-request response validation tests already included. POST and PATCH requests that submit data have commented-out pre-formatted raw JSON containing any key/value pairs accepted by the endpoint. Uncomment any lines or multi line arrays needed for your request and replace the placeholder value assigned to the keys you need to submit. Note the placeholder value indicates what data type should be used for that key.
+A Postman collection of our public api found on [api.help.mabl.com](https://api.help.mabl.com/reference) with endpoints, path variables, query parameters and post-request response validation tests already included. 
 
+To use this collection, you need access to a mabl workspace to create your own [API key](https://help.mabl.com/hc/en-us/articles/17776006239764). Learn more about authenticating requests to the mabl API [here](https://api.help.mabl.com/reference/authentication).
 
+> Before you import this collection into mabl, [create an application](https://help.mabl.com/hc/en-us/articles/23120982365716) called "mabl API" and assign it a base URL of `https://api.mabl.com`. Then, when you import the collection, select "mabl API" as the application.
 
-To use these collections, you’ll need to register for the service and create your own API key. After importing into mabl, replace the placeholder value for the API key variable with your actual API key. For the mabl public API collection, this value can be found under the Authentication tab for the mabl APIs parent folder.
+### Updating placeholders
+After importing into mabl, replace the placeholder value with your actual API key in the [test-level auth settings](https://help.mabl.com/hc/en-us/articles/25298660330516).
+
+Many endpoints have ID placeholders in the query or path params. See our article on [mabl resource IDs](https://help.mabl.com/hc/en-us/articles/17782745983636) for more details on how to get these IDs.
+
+### Submitting data
+POST and PATCH requests that submit data have commented-out pre-formatted raw JSON containing any key/value pairs accepted by the endpoint. Uncomment any lines or multi-line arrays needed for your request, and replace the placeholder value with the value you want to submit. Note that placeholder values indicate what data type should be used for that key.
 
 

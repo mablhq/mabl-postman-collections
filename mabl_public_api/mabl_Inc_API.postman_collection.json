@@ -480,7 +480,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"data_table\": {\n//    \"name\": \"string\"\n  },\n//  \"workspace_id\": \"string\",\n \"scenarios\": [\n    {\n/*      \"variables\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ], */\n//      \"name\": \"string\"\n    },\n/*    {\n      \"variables\": [\n        {\n          \"name\": \"string2\",\n          \"value\": \"string2\"\n        }\n      ], */\n//      \"name\": \"string2\"\n    }\n  ] \n}",
+							"raw": "{\n  // \"data_table\": {\n  //   \"name\": \"string\"\n  // },\n  // \"workspace_id\": \"string\",\n  // \"scenarios\": [\n  //   {\n  //     \"variables\": [\n  //       {\n  //         \"name\": \"string\",\n  //         \"value\": \"string\"\n  //       },\n  //       {\n  //         \"name\": \"string\",\n  //         \"value\": \"string\"\n  //       }\n  //     ],\n  //     \"name\": \"string\"\n  //   },\n  //   {\n  //     \"variables\": [\n  //       {\n  //         \"name\": \"string\",\n  //         \"value\": \"string\"\n  //       },\n  //       {\n  //         \"name\": \"string\",\n  //         \"value\": \"string\"\n  //       }\n  //     ],\n  //     \"name\": \"string\"\n  //   }\n  // ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1636,7 +1636,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{api.url}}/events/deployment?preview",
+							"raw": "{{api.url}}/events/deployment?preview=true",
 							"host": [
 								"{{api.url}}"
 							],
@@ -1647,7 +1647,7 @@
 							"query": [
 								{
 									"key": "preview",
-									"value": null,
+									"value": true,
 									"description": "Boolean"
 								}
 							]
@@ -2509,7 +2509,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "mailbox/address/:id",
+							"raw": "{{api.url}}/mailbox/address/:id",
 							"host": [
 								"mailbox"
 							],
@@ -2562,6 +2562,15 @@
 									"value": ""
 								}
 							]
+						},
+						"body": {
+							"mode": "raw",
+							"options": {
+							  "raw": {
+								"language": "json"
+							  }
+							},
+							"raw": "{\n // \"status\": \"string\"\n}"
 						}
 					},
 					"response": []
@@ -2829,6 +2838,45 @@
 					"response": []
 				},
 				{
+					"name": "Get a test run artifact export - https://api.help.mabl.com/reference/gettestrunartifactexport",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/workspaces/:workspace_id/reports/activityFeed",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"workspaces",
+								":workspace_id",
+								"reports",
+								"activityFeed"
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve activity feed entries - https://api.help.mabl.com/reference/queryactivityfeed",
 					"event": [
 						{
@@ -2918,45 +2966,6 @@
 									"description": "String",
 									"disabled": true
 								}
-							],
-							"variable": [
-								{
-									"key": "workspace_id",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a test run artifact export - https://api.help.mabl.com/reference/gettestrunartifactexport",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// __MABL_GENERATED__ Do not edit below this line",
-									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{api.url}}/workspaces/:workspace_id/reports/activityFeed",
-							"host": [
-								"{{api.url}}"
-							],
-							"path": [
-								"workspaces",
-								":workspace_id",
-								"reports",
-								"activityFeed"
 							],
 							"variable": [
 								{
