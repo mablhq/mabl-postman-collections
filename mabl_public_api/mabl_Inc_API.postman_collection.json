@@ -2562,6 +2562,15 @@
 									"value": ""
 								}
 							]
+						},
+						"body": {
+							"mode": "raw",
+							"options": {
+							  "raw": {
+								"language": "json"
+							  }
+							},
+							"raw": "{\n  \"status\": \"string\"\n}"
 						}
 					},
 					"response": []
