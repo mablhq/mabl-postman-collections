@@ -2509,7 +2509,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "mailbox/address/:id",
+							"raw": "{{api.url}}/mailbox/address/:id",
 							"host": [
 								"mailbox"
 							],
