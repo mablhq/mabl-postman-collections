@@ -1636,7 +1636,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{api.url}}/events/deployment?preview",
+							"raw": "{{api.url}}/events/deployment?preview=true",
 							"host": [
 								"{{api.url}}"
 							],
@@ -1647,7 +1647,7 @@
 							"query": [
 								{
 									"key": "preview",
-									"value": null,
+									"value": true,
 									"description": "Boolean"
 								}
 							]
