@@ -2570,7 +2570,7 @@
 								"language": "json"
 							  }
 							},
-							"raw": "{\n  \"status\": \"string\"\n}"
+							"raw": "{\n // \"status\": \"string\"\n}"
 						}
 					},
 					"response": []
