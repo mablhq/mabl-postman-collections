@@ -2838,6 +2838,45 @@
 					"response": []
 				},
 				{
+					"name": "Get a test run artifact export - https://api.help.mabl.com/reference/gettestrunartifactexport",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// __MABL_GENERATED__ Do not edit below this line",
+									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api.url}}/workspaces/:workspace_id/reports/activityFeed",
+							"host": [
+								"{{api.url}}"
+							],
+							"path": [
+								"workspaces",
+								":workspace_id",
+								"reports",
+								"activityFeed"
+							],
+							"variable": [
+								{
+									"key": "workspace_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve activity feed entries - https://api.help.mabl.com/reference/queryactivityfeed",
 					"event": [
 						{
@@ -2927,45 +2966,6 @@
 									"description": "String",
 									"disabled": true
 								}
-							],
-							"variable": [
-								{
-									"key": "workspace_id",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a test run artifact export - https://api.help.mabl.com/reference/gettestrunartifactexport",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// __MABL_GENERATED__ Do not edit below this line",
-									"pm.test(\"Status equals 200\", function () { pm.response.to.have.status(parseInt(\"200\")); });"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{api.url}}/workspaces/:workspace_id/reports/activityFeed",
-							"host": [
-								"{{api.url}}"
-							],
-							"path": [
-								"workspaces",
-								":workspace_id",
-								"reports",
-								"activityFeed"
 							],
 							"variable": [
 								{
