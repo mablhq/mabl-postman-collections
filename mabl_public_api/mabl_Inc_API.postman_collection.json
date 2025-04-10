@@ -1037,12 +1037,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.mabl.com/dataTables/scenarios/:scenario_id",
-							"protocol": "https",
+							"raw": "{{api.url}}/dataTables/scenarios/:scenario_id",
 							"host": [
-								"api",
-								"mabl",
-								"com"
+								"{{api.url}}"
 							],
 							"path": [
 								"dataTables",
@@ -1096,12 +1093,9 @@
 							}
 						},
 						"url": {
-							"raw": "https://api.mabl.com/dataTables/scenarios/:scenario_id",
-							"protocol": "https",
+							"raw": "{{api.url}}/dataTables/scenarios/:scenario_id",
 							"host": [
-								"api",
-								"mabl",
-								"com"
+								"{{api.url}}"
 							],
 							"path": [
 								"dataTables",
@@ -1198,7 +1192,10 @@
 							}
 						},
 						"url": {
-							"raw": "/database/connection",
+							"raw": "{{api.url}}/database/connection",
+							"host": [
+								"{{api.url}}"
+							],
 							"path": [
 								"database",
 								"connection"
@@ -2511,9 +2508,10 @@
 						"url": {
 							"raw": "{{api.url}}/mailbox/address/:id",
 							"host": [
-								"mailbox"
+								"{{api.url}}"
 							],
 							"path": [
+								"mailbox",
 								"address",
 								":id"
 							],
@@ -3202,12 +3200,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.mabl.com/workspaces/:workspace_id/users/:id",
-							"protocol": "https",
+							"raw": "{{api.url}}/workspaces/:workspace_id/users/:id",
 							"host": [
-								"api",
-								"mabl",
-								"com"
+								"{{api.url}}"
 							],
 							"path": [
 								"workspaces",
